@@ -7,10 +7,10 @@ import ExecutionViewer from "./_components/ExecutionViewer";
 async function ExecutionViewerPage({
   params,
 }: {
-  params: {
+  params: Promise<{
     executionId: string;
     workflowId: string;
-  };
+  }>;
 }) {
   const { executionId, workflowId } = await params;
 

@@ -7,9 +7,9 @@ import ExecutionsTable from "./_components/ExecutionsTable";
 export default async function ExecutionsPage({
   params,
 }: {
-  params: {
+  params: Promise<{
     workflowId: string;
-  };
+  }>;
 }) {
   const { workflowId } = await params;
   return (
