@@ -14,10 +14,10 @@ import CreditUsageChart from "./billing/_components/CreditUsageChart";
 async function HomePage({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     month?: string;
     year?: string;
-  };
+  }>;
 }) {
   const currentDate = new Date();
   const { month, year } = await searchParams;
