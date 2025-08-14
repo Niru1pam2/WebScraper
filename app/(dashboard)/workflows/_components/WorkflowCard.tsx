@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Workflow } from "@/lib/generated/prisma";
 import { cn } from "@/lib/utils";
 import { WorkflowExecutionStatus, WorkflowStatus } from "@/types/workflow";
@@ -64,7 +64,9 @@ function WorkflowCard({ workflow }: { workflow: Workflow }) {
           </div>
           <div>
             <h3 className="text-base font-bold text-muted-foreground flex items-center">
-              <TooltipWrapper content={workflow?.description}>
+              <TooltipWrapper
+                content={workflow?.description || "No description"}
+              >
                 <Link
                   href={`/workflow/editor/${workflow.id}`}
                   className="hover:underline"
